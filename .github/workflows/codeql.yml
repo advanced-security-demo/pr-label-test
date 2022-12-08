@@ -37,7 +37,7 @@ jobs:
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
     
-
+    if: github.event_name == "push" || (github.event_name == "pull_request" && github.event.label.name == 'codeql')
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
